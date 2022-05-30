@@ -228,11 +228,11 @@
     <div class="wrapper">
         <div class="box">
 
-            <div class="text">
+            <!--<div class="text">
                 <div class="direction-angle">西北 123°</div>
                 <div class="latitude">北纬 <span>123°5'23"</span></div>
                 <div class="longitude">东经 <span> 123°5'23"</span></div>
-            </div>
+            </div>-->
             <!-- 指针 -->
             <div class="point"></div>
 
@@ -277,15 +277,15 @@
                 </div>
             </div>
             <!-- 中心水平仪 -->
-            <div class="gradienter-in"></div>
+            <!--<div class="gradienter-in"></div>-->
         </div>
 
         <!-- 第二页水平仪 -->
-        <div class="gradienter-out">
+        <!--<div class="gradienter-out">
                 <span>
                     <div>12°</div>
                 </span>
-        </div>
+        </div>-->
     </div>
 </div>
 <!-- <iframe id="geoPage" width=0 height=0 frameborder=0 style="display:none" scrolling="no" src="https://apis.map.qq.com/tools/geolocation?key=TMBBZ-5GYCP-AFQDK-L2QCS-K3323-HFBAX&referer=myapp" frameborder="0"></iframe> -->
@@ -295,16 +295,15 @@
     var oDirectionLiArr = document.getElementsByClassName('direction');
     var oLatitudeSpan = document.getElementsByClassName('latitude')[0].getElementsByTagName('span')[0]
     var oLongitudeSpan = document.getElementsByClassName('longitude')[0].getElementsByTagName('span')[0];
-    var oGradienterOutSpan = document.getElementsByClassName('gradienter-out')[0].getElementsByTagName('span')[0];
-    var oGradienterOutDiv = document.getElementsByClassName('gradienter-out')[0].getElementsByTagName('div')[0];
-    var oGradienterIn = document.getElementsByClassName('gradienter-in')[0];
+    //var oGradienterOutSpan = document.getElementsByClassName('gradienter-out')[0].getElementsByTagName('span')[0];
+    //var oGradienterOutDiv = document.getElementsByClassName('gradienter-out')[0].getElementsByTagName('div')[0];
+    //var oGradienterIn = document.getElementsByClassName('gradienter-in')[0];
     var oDial = document.getElementsByClassName('dial')[0];
     var oPoint = document.getElementsByClassName('point')[0];
     var oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
     var oEastSpan = document.getElementsByClassName('east')[0].getElementsByTagName('span')[0];
     var oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
     var oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
-    var oDirecrionAngle = document.getElementsByClassName('direction-angle')[0];
 
 
 
@@ -348,7 +347,7 @@
 
             // 指北针
             oDial.style.transform = "translatez(0px) rotate(" + Math.round(e.alpha) + "deg)";
-
+/*
             var str = '';
 
             // 判断方位
@@ -380,13 +379,9 @@
                     break;
 
             };
-
-
-            // 方向角度
-            oDirecrionAngle.innerHTML = str + Math.abs(Math.round(360 - e.alpha)) + '°';
-
+*/
             // 第一页的水平仪和方位文字归正
-            oGradienterIn.style.transform = 'translate3D(0px, 0px, 0px) rotate(' + -Math.round(e.alpha) + 'deg)';
+            //oGradienterIn.style.transform = 'translate3D(0px, 0px, 0px) rotate(' + -Math.round(e.alpha) + 'deg)';
             oNorthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha) + 'deg)';
             oEastSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 90) + 'deg)';
             oSouthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 180) + 'deg)';
@@ -394,8 +389,8 @@
 
 
             // 水平仪     必须这么写，否则不识别，注意每个值都要空格隔开  (得出的角度较大，为了美观除以一个数)
-            oGradienterOutSpan.style.cssText = "box-shadow: rgb(136, 135, 135) " + -Math.round(e.gamma) / 2 + "px " + -Math.round(e.beta) / 2 + "px 0px 0px, rgb(0, 0, 0) " + -Math.round(e.gamma) / 2 + "px " + -Math.round(e.beta) / 2 + "px 0px 0px inset;";
-            oGradienterIn.style.cssText = "box-shadow: rgb(136, 135, 135) " + -Math.round(e.gamma) / 5 + "px " + -Math.round(e.beta) / 5 + "px 0px 0px, rgb(0, 0, 0) " + -Math.round(e.gamma) / 5 + "px " + -Math.round(e.beta) / 5 + "px 0px 0px inset;";
+            //oGradienterOutSpan.style.cssText = "box-shadow: rgb(136, 135, 135) " + -Math.round(e.gamma) / 2 + "px " + -Math.round(e.beta) / 2 + "px 0px 0px, rgb(0, 0, 0) " + -Math.round(e.gamma) / 2 + "px " + -Math.round(e.beta) / 2 + "px 0px 0px inset;";
+            //oGradienterIn.style.cssText = "box-shadow: rgb(136, 135, 135) " + -Math.round(e.gamma) / 5 + "px " + -Math.round(e.beta) / 5 + "px 0px 0px, rgb(0, 0, 0) " + -Math.round(e.gamma) / 5 + "px " + -Math.round(e.beta) / 5 + "px 0px 0px inset;";
 
 
             // 指针指到正北时,指针变红；
@@ -407,14 +402,14 @@
 
             // 第二页
             // 设备哪个轴偏转量大就让圆圈里显示谁的值
-            if (e.beta > e.gamma) {
-                oGradienterOutSpan.style.transform = 'translate3D(0px, 0px, 0px) rotate(' - Math.round(e.beta) + 'deg)'
+            /*if (e.beta > e.gamma) {
+                //oGradienterOutSpan.style.transform = 'translate3D(0px, 0px, 0px) rotate(' - Math.round(e.beta) + 'deg)'
                 oGradienterOutDiv.innerHTML = Math.abs(Math.round(e.beta)) + '°';
 
             } else {
                 oGradienterOutDiv.innerHTML = Math.abs(Math.round(e.gamma)) + '°';
 
-            }
+            }*/
         } else {
             alert("您的设备不支持Deviceorientation功能，请用Android设备打开！")
         }
