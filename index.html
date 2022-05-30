@@ -10,7 +10,7 @@
             padding: 0;
             margin: 0;
             list-style: none;
-            background-color: blanchedalmond;
+            background-color: navajowhite;
         }
 
         :root,
@@ -174,7 +174,6 @@
             top: 20px;
             text-align: center;
             line-height: 25px;
-            font-family: '宋体';
             font-weight: 500;
             font-size: 10px;
             transform-origin: center 90px;
@@ -228,12 +227,6 @@
     <div class="wrapper">
         <div class="box">
 
-            <!--<div class="text">
-                <div class="direction-angle">西北 123°</div>
-                <div class="latitude">北纬 <span>123°5'23"</span></div>
-                <div class="longitude">东经 <span> 123°5'23"</span></div>
-            </div>-->
-            <!-- 指针 -->
             <div class="point"></div>
 
             <!-- 表盘 -->
@@ -242,7 +235,8 @@
                 <!-- 刻度 -->
                 <div class="scale">
                     <ul>
-                        <li>*180
+                        <li>*100
+                        <li>*80
                     </ul>
                 </div>
 
@@ -279,22 +273,16 @@
         </div>
     </div>
 </div>
-<!-- <iframe id="geoPage" width=0 height=0 frameborder=0 style="display:none" scrolling="no" src="https://apis.map.qq.com/tools/geolocation?key=TMBBZ-5GYCP-AFQDK-L2QCS-K3323-HFBAX&referer=myapp" frameborder="0"></iframe> -->
 <script>
     var oScaleLiArr = document.getElementsByClassName('scale')[0].getElementsByTagName('li');
     var oNumLiArr = document.getElementsByClassName('num')[0].getElementsByTagName('li');
     var oDirectionLiArr = document.getElementsByClassName('direction');
-    //var oLatitudeSpan = document.getElementsByClassName('latitude')[0].getElementsByTagName('span')[0]
-    //var oLongitudeSpan = document.getElementsByClassName('longitude')[0].getElementsByTagName('span')[0];
     var oDial = document.getElementsByClassName('dial')[0];
     var oPoint = document.getElementsByClassName('point')[0];
     var oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
     var oEastSpan = document.getElementsByClassName('east')[0].getElementsByTagName('span')[0];
     var oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
     var oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
-    //var oDirecrionAngle = document.getElementsByClassName('direction-angle')[0];
-
-
 
 
     // 让元素围成一圈
@@ -304,25 +292,6 @@
         })
 
     }
-
-    // 获取经纬度
-
-    // 这是腾讯地图API定义好的事件
-    // window.addEventListener("message", function(e) {
-    // var loc = e.data;        瞎写的定位
-    /*var loc = {
-        module: 'geolocation',
-        nation: '中国',
-        province: '广东省',
-        city: '深圳市',
-        lat: '22.532332',
-        lng: '113.936553',
-    }
-*/
-    //oLatitudeSpan.innerHTML = parseInt(loc.lat) + '°' + parseInt((loc.lat - parseInt(loc.lat)) * 60) + "′" + parseInt(((loc.lat - parseInt(loc.lat)) * 60 - parseInt((loc.lat - parseInt(loc.lat)) * 60)) * 60) + "″";
-    //oLongitudeSpan.innerHTML = parseInt(loc.lng) + '°' + parseInt((loc.lng - parseInt(loc.lng)) * 60) + "′" + parseInt(((loc.lng - parseInt(loc.lng)) * 60 - parseInt((loc.lng - parseInt(loc.lng)) * 60)) * 60) + "″";
-
-    // }, false);
 
 
     // 绑定获取设备方位信息事件
@@ -336,43 +305,7 @@
 
             // 指北针
             oDial.style.transform = "translatez(0px) rotate(" + Math.round(e.alpha) + "deg)";
-/*
-            var str = '';
 
-            // 判断方位
-            var dic = (Math.round((e.alpha) / 45) + 8) % 8;
-            switch (dic) {
-                case 0:
-                    str = "Nord ";
-                    break;
-                case 1:
-                    str = "西北 ";
-                    break;
-                case 2:
-                    str = "Ouest ";
-                    break;
-                case 3:
-                    str = "Sud Ouest ";
-                    break;
-                case 4:
-                    str = "Sud ";
-                    break;
-                case 5:
-                    str = "东南 ";
-                    break;
-                case 6:
-                    str = "Est ";
-                    break;
-                case 7:
-                    str = "nord-est ";
-                    break;
-
-            };
-
-
-            // 方向角度
-            oDirecrionAngle.innerHTML = str + Math.abs(Math.round(360 - e.alpha)) + '°';
-*/
             // 第一页的水平仪和方位文字归正
             oNorthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha) + 'deg)';
             oEastSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 90) + 'deg)';
@@ -391,11 +324,6 @@
         }*/
 
     }, false)
-
-
-
 </script>
-
 </body>
-
 </html>
