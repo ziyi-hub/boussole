@@ -295,9 +295,9 @@
     var oDirectionLiArr = document.getElementsByClassName('direction');
     var oLatitudeSpan = document.getElementsByClassName('latitude')[0].getElementsByTagName('span')[0]
     var oLongitudeSpan = document.getElementsByClassName('longitude')[0].getElementsByTagName('span')[0];
-    var oGradienterOutSpan = document.getElementsByClassName('gradienter-out')[0].getElementsByTagName('span')[0];
-    var oGradienterOutDiv = document.getElementsByClassName('gradienter-out')[0].getElementsByTagName('div')[0];
-    var oGradienterIn = document.getElementsByClassName('gradienter-in')[0];
+    //var oGradienterOutSpan = document.getElementsByClassName('gradienter-out')[0].getElementsByTagName('span')[0];
+    //var oGradienterOutDiv = document.getElementsByClassName('gradienter-out')[0].getElementsByTagName('div')[0];
+    //var oGradienterIn = document.getElementsByClassName('gradienter-in')[0];
     var oDial = document.getElementsByClassName('dial')[0];
     var oPoint = document.getElementsByClassName('point')[0];
     var oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
@@ -386,7 +386,7 @@
             oDirecrionAngle.innerHTML = str + Math.abs(Math.round(360 - e.alpha)) + '°';
 
             // 第一页的水平仪和方位文字归正
-            oGradienterIn.style.transform = 'translate3D(0px, 0px, 0px) rotate(' + -Math.round(e.alpha) + 'deg)';
+            //oGradienterIn.style.transform = 'translate3D(0px, 0px, 0px) rotate(' + -Math.round(e.alpha) + 'deg)';
             oNorthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha) + 'deg)';
             oEastSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 90) + 'deg)';
             oSouthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 180) + 'deg)';
@@ -394,8 +394,8 @@
 
 
             // 水平仪     必须这么写，否则不识别，注意每个值都要空格隔开  (得出的角度较大，为了美观除以一个数)
-            oGradienterOutSpan.style.cssText = "box-shadow: rgb(136, 135, 135) " + -Math.round(e.gamma) / 2 + "px " + -Math.round(e.beta) / 2 + "px 0px 0px, rgb(0, 0, 0) " + -Math.round(e.gamma) / 2 + "px " + -Math.round(e.beta) / 2 + "px 0px 0px inset;";
-            oGradienterIn.style.cssText = "box-shadow: rgb(136, 135, 135) " + -Math.round(e.gamma) / 5 + "px " + -Math.round(e.beta) / 5 + "px 0px 0px, rgb(0, 0, 0) " + -Math.round(e.gamma) / 5 + "px " + -Math.round(e.beta) / 5 + "px 0px 0px inset;";
+            //oGradienterOutSpan.style.cssText = "box-shadow: rgb(136, 135, 135) " + -Math.round(e.gamma) / 2 + "px " + -Math.round(e.beta) / 2 + "px 0px 0px, rgb(0, 0, 0) " + -Math.round(e.gamma) / 2 + "px " + -Math.round(e.beta) / 2 + "px 0px 0px inset;";
+            //oGradienterIn.style.cssText = "box-shadow: rgb(136, 135, 135) " + -Math.round(e.gamma) / 5 + "px " + -Math.round(e.beta) / 5 + "px 0px 0px, rgb(0, 0, 0) " + -Math.round(e.gamma) / 5 + "px " + -Math.round(e.beta) / 5 + "px 0px 0px inset;";
 
 
             // 指针指到正北时,指针变红；
@@ -407,6 +407,7 @@
 
             // 第二页
             // 设备哪个轴偏转量大就让圆圈里显示谁的值
+            /*
             if (e.beta > e.gamma) {
                 oGradienterOutSpan.style.transform = 'translate3D(0px, 0px, 0px) rotate(' - Math.round(e.beta) + 'deg)'
                 oGradienterOutDiv.innerHTML = Math.abs(Math.round(e.beta)) + '°';
@@ -414,7 +415,7 @@
             } else {
                 oGradienterOutDiv.innerHTML = Math.abs(Math.round(e.gamma)) + '°';
 
-            }
+            }*/
         } /*else {
             alert("您的设备不支持Deviceorientation功能，请用Android设备打开！")
         }*/
