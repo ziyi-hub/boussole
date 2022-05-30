@@ -284,8 +284,8 @@
     var oScaleLiArr = document.getElementsByClassName('scale')[0].getElementsByTagName('li');
     var oNumLiArr = document.getElementsByClassName('num')[0].getElementsByTagName('li');
     var oDirectionLiArr = document.getElementsByClassName('direction');
-    var oLatitudeSpan = document.getElementsByClassName('latitude')[0].getElementsByTagName('span')[0]
-    var oLongitudeSpan = document.getElementsByClassName('longitude')[0].getElementsByTagName('span')[0];
+    //var oLatitudeSpan = document.getElementsByClassName('latitude')[0].getElementsByTagName('span')[0]
+    //var oLongitudeSpan = document.getElementsByClassName('longitude')[0].getElementsByTagName('span')[0];
     var oDial = document.getElementsByClassName('dial')[0];
     var oPoint = document.getElementsByClassName('point')[0];
     var oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
@@ -310,7 +310,7 @@
     // 这是腾讯地图API定义好的事件
     // window.addEventListener("message", function(e) {
     // var loc = e.data;        瞎写的定位
-    var loc = {
+    /*var loc = {
         module: 'geolocation',
         nation: '中国',
         province: '广东省',
@@ -318,9 +318,9 @@
         lat: '22.532332',
         lng: '113.936553',
     }
-
-    oLatitudeSpan.innerHTML = parseInt(loc.lat) + '°' + parseInt((loc.lat - parseInt(loc.lat)) * 60) + "′" + parseInt(((loc.lat - parseInt(loc.lat)) * 60 - parseInt((loc.lat - parseInt(loc.lat)) * 60)) * 60) + "″";
-    oLongitudeSpan.innerHTML = parseInt(loc.lng) + '°' + parseInt((loc.lng - parseInt(loc.lng)) * 60) + "′" + parseInt(((loc.lng - parseInt(loc.lng)) * 60 - parseInt((loc.lng - parseInt(loc.lng)) * 60)) * 60) + "″";
+*/
+    //oLatitudeSpan.innerHTML = parseInt(loc.lat) + '°' + parseInt((loc.lat - parseInt(loc.lat)) * 60) + "′" + parseInt(((loc.lat - parseInt(loc.lat)) * 60 - parseInt((loc.lat - parseInt(loc.lat)) * 60)) * 60) + "″";
+    //oLongitudeSpan.innerHTML = parseInt(loc.lng) + '°' + parseInt((loc.lng - parseInt(loc.lng)) * 60) + "′" + parseInt(((loc.lng - parseInt(loc.lng)) * 60 - parseInt((loc.lng - parseInt(loc.lng)) * 60)) * 60) + "″";
 
     // }, false);
 
