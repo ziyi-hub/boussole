@@ -10,12 +10,7 @@
             padding: 0;
             margin: 0;
             list-style: none;
-            background-color: navajowhite;
-        }
-
-        li:nth-child(5n+1){ /*5个刻度为一组，每一组的第一个刻度要长一点。*/
-            height: 18px;
-            color: black;
+            background-color: white;
         }
 
         :root,
@@ -239,10 +234,7 @@
 
                 <!-- 刻度 -->
                 <div class="scale">
-                    <ul>
-                        <li>*100
-                        <li>*80
-                    </ul>
+                    <ul id="ul"></ul>
                 </div>
 
                 <!-- 数字 -->
@@ -296,6 +288,15 @@
             ele.style.transform = 'translatez(0px) rotate(' + deg * index + 'deg)';
         })
 
+    }
+
+    let oUl = document.getElementById('ul');
+    /* 因为是60个刻度嘛，我们就创建60个li，并设置它们的旋转角度 */
+    for (let i=0; i<180; i++){
+        var oLi = document.createElement('li');
+        /* 因为i是从0~60，而每个刻度的旋转角度360°÷60=6°，所以每个刻度的旋转角度就是i*6°  */
+        oLi.style.webkitTransform = 'rotate('+ i*2 +'deg)';
+        oUl.appendChild(oLi);
     }
 
 
