@@ -12,7 +12,7 @@
             padding: 0;
             margin: 0;
             list-style: none;
-            background-color: white;
+            background-color: orange;
         }
 
         :root,
@@ -249,7 +249,7 @@
 
                 <!-- 数字 -->
                 <div class="num">
-                    <ul>
+                    <!--<ul>
                         <li>0</li>
                         <li>20</li>
                         <li>40</li>
@@ -269,12 +269,12 @@
                         <li>320</li>
                         <li>340</li>
 
-                    </ul>
-                    <div class="sign" style="z-index: 999; background-color: transparent"></div>
+                    </ul>-->
+                    <!--<div class="sign" style="z-index: 999; background-color: transparent"></div>
                     <div class=" direction north"><span>Nord</span></div>
                     <div class=" direction east"><span>Est</span></div>
                     <div class=" direction south"><span>Sud</span></div>
-                    <div class=" direction western"><span>Ouest</span></div>
+                    <div class=" direction western"><span>Ouest</span></div>-->
                     <div class="radar" style="width: 215px; height: 115px; top: 30px;left: 60px; background-color: transparent;">
                         <canvas id="myChart2" style="background-color: transparent;"></canvas>
                     </div>
@@ -285,14 +285,14 @@
 </div>
 <script>
     let oScaleLiArr = document.getElementsByClassName('scale')[0].getElementsByTagName('li');
-    let oNumLiArr = document.getElementsByClassName('num')[0].getElementsByTagName('li');
+    //let oNumLiArr = document.getElementsByClassName('num')[0].getElementsByTagName('li');
     let oDirectionLiArr = document.getElementsByClassName('direction');
     let oDial = document.getElementsByClassName('dial')[0];
     let oPoint = document.getElementsByClassName('point')[0];
-    let oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
-    let oEastSpan = document.getElementsByClassName('east')[0].getElementsByTagName('span')[0];
-    let oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
-    let oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
+    //let oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
+    //let oEastSpan = document.getElementsByClassName('east')[0].getElementsByTagName('span')[0];
+    //let oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
+    //let oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
     let oDirecrionAngle = document.getElementsByClassName('direction-angle')[0];
 
 
@@ -320,7 +320,7 @@
 
             // 初始化表盘
             rotateDom(oScaleLiArr, 2)
-            rotateDom(oNumLiArr, 20)
+            //rotateDom(oNumLiArr, 20)
             rotateDom(oDirectionLiArr, 90)
 
             // 指北针
