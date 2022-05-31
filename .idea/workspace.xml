@@ -20,8 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50533356-ae51-4774-9722-e083c85f0e1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/nuage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/radar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -81,7 +79,7 @@
       <workItem from="1653918210464" duration="4922000" />
       <workItem from="1653924189200" duration="719000" />
       <workItem from="1653980723228" duration="1528000" />
-      <workItem from="1653985399079" duration="13654000" />
+      <workItem from="1653985399079" duration="14122000" />
     </task>
     <servers />
   </component>
@@ -111,12 +109,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.html</url>
-          <line>303</line>
+          <line>302</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.html</url>
-          <line>310</line>
+          <line>309</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
