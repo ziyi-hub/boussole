@@ -70,7 +70,7 @@ window.onload = () => {
                 data2.push({x: place.x, y: place.y});
             }
         })
-        generateChart("myChart2", data2, '#2196f3');
+        generateChart("myChart2", data2, 'black');
     })
 }
 
