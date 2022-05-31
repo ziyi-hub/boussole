@@ -62,6 +62,8 @@
       <option name="presentableId" value="Default" />
       <updated>1653918209064</updated>
       <workItem from="1653918210464" duration="4922000" />
+      <workItem from="1653924189200" duration="719000" />
+      <workItem from="1653980723228" duration="396000" />
     </task>
     <servers />
   </component>
@@ -78,26 +80,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="99" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1653921195256">
+    <state x="137" y="357" width="1240" height="700" key="DiffContextDialog" timestamp="1653980920583">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="99" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1653921195256" />
+    <state x="137" y="357" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1653980920583" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.html</url>
-          <line>292</line>
-          <properties lambdaOrdinal="-1" />
+          <line>296</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.html</url>
-          <line>299</line>
-          <properties lambdaOrdinal="-1" />
+          <line>303</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

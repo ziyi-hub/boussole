@@ -227,6 +227,9 @@
     <div class="wrapper">
         <div class="box">
 
+            <div class="text">
+                <div class="direction-angle"></div>
+            </div>
             <div class="point"></div>
 
             <!-- 表盘 -->
@@ -271,15 +274,16 @@
     </div>
 </div>
 <script>
-    var oScaleLiArr = document.getElementsByClassName('scale')[0].getElementsByTagName('li');
-    var oNumLiArr = document.getElementsByClassName('num')[0].getElementsByTagName('li');
-    var oDirectionLiArr = document.getElementsByClassName('direction');
-    var oDial = document.getElementsByClassName('dial')[0];
-    var oPoint = document.getElementsByClassName('point')[0];
-    var oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
-    var oEastSpan = document.getElementsByClassName('east')[0].getElementsByTagName('span')[0];
-    var oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
-    var oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
+    let oScaleLiArr = document.getElementsByClassName('scale')[0].getElementsByTagName('li');
+    let oNumLiArr = document.getElementsByClassName('num')[0].getElementsByTagName('li');
+    let oDirectionLiArr = document.getElementsByClassName('direction');
+    let oDial = document.getElementsByClassName('dial')[0];
+    let oPoint = document.getElementsByClassName('point')[0];
+    let oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
+    let oEastSpan = document.getElementsByClassName('east')[0].getElementsByTagName('span')[0];
+    let oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
+    let oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
+    let oDirecrionAngle = document.getElementsByClassName('direction-angle')[0];
 
 
     // 让元素围成一圈
@@ -293,7 +297,7 @@
     let oUl = document.getElementById('ul');
     /* 因为是60个刻度嘛，我们就创建60个li，并设置它们的旋转角度 */
     for (let i=0; i<180; i++){
-        var oLi = document.createElement('li');
+        let oLi = document.createElement('li');
         /* 因为i是从0~60，而每个刻度的旋转角度360°÷60=6°，所以每个刻度的旋转角度就是i*6°  */
         oLi.style.webkitTransform = 'rotate('+ i*2 +'deg)';
         oUl.appendChild(oLi);
@@ -311,6 +315,43 @@
 
             // 指北针
             oDial.style.transform = "translatez(0px) rotate(" + Math.round(e.alpha) + "deg)";
+
+            let str = '';
+
+            // 判断方位
+            let dic = (Math.round((e.alpha) / 45) + 8) % 8;
+            switch (dic) {
+                case 0:
+                    str = "Nord ";
+                    break;
+                case 1:
+                    str = "西北 ";
+                    break;
+                case 2:
+                    str = "Ouest ";
+                    break;
+                case 3:
+                    str = "Sud Ouest ";
+                    break;
+                case 4:
+                    str = "Sud ";
+                    break;
+                case 5:
+                    str = "东南 ";
+                    break;
+                case 6:
+                    str = "Est ";
+                    break;
+                case 7:
+                    str = "nord-est ";
+                    break;
+
+            };
+
+
+            // 方向角度
+            oDirecrionAngle.innerHTML = str + Math.abs(Math.round(360 - e.alpha)) + '°';
+
 
             // 第一页的水平仪和方位文字归正
             oNorthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha) + 'deg)';
