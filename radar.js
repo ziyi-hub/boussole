@@ -45,7 +45,7 @@ let data = [
     {x: 49.5272481,  y: 49.5272481},
     {x: 48.1681596,  y: 6.4528284},
     {x: 48.6588883,  y: 6.1513846},
-    {x: 48.6835098,   y: 6.1616104},
+    /*{x: 48.6835098,   y: 6.1616104}*/,
 ];
 
 
@@ -53,7 +53,7 @@ window.onload = () => {
     return navigator.geolocation.getCurrentPosition(function (position) {
         let curLatitude = position.coords.latitude;
         let curLongitude = position.coords.longitude;
-        //generateChart("myChart", data, '#2196f3');
+        generateChart("myChart", data, '#2196f3');
         console.log("current position" + curLatitude, curLongitude);
         data.forEach(place => {
             let distance = clacDistance(curLatitude, curLongitude, place.x, place.y);
@@ -77,9 +77,10 @@ window.onload = () => {
 
 function pointStyle(){
     let pointStyle = ['rect'];
-    for(let i = 0; i < data.length-1; i++){
+    for(let i = 0; i < data.length-2; i++){
         pointStyle.push("circle");
     }
+    pointStyle.push("rect");
     return pointStyle;
 }
 
@@ -99,22 +100,22 @@ function generateChart(id, data, color){
         },
         options: {
             // enleve legend
-            plugins: {
+            /*plugins: {
                 legend: {
-                    display: false
+                    display: true
                 },
-            },
+            },*/
             responsive: true, // Instruct chart js to respond nicely.
             maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
             //enleve l'abscisse et l'ordonnées
-            scales:{
+            /*scales:{
                 x: {
                     display: false
                 },
                 y: {
                     display: false
                 },
-            }
+            }*/
         }
     });
 }
