@@ -109,7 +109,7 @@ function generateChart(data1, data2) {
     let chart = new CanvasJS.Chart("chartContainer", {
         animationEnabled: true,
         axisX: {
-            //gridThickness: 0,
+            gridThickness: 0,
             tickLength: 0,
             lineThickness: 0,
             labelFormatter: function(){
@@ -117,7 +117,7 @@ function generateChart(data1, data2) {
             }
         },
         axisY:{
-            //gridThickness: 0,
+            gridThickness: 0,
             tickLength: 0,
             lineThickness: 0,
             labelFormatter: function(){
@@ -135,20 +135,20 @@ function generateChart(data1, data2) {
             type: "scatter",
             toolTipContent: "<span style=\"color:#4F81BC \"><b>{name}</b></span><br/><b> Lat:</b> {x} TPS<br/><b> Lng:</b></span> {y} ms",
             name: "UL",
-            showInLegend: true,
+            showInLegend: false,
             dataPoints: data1
         },
         {
             type: "scatter",
             name: "my Current position",
-            showInLegend: true,
+            showInLegend: false,
             toolTipContent: "<span style=\"color:#C0504E \"><b>{name}</b></span><br/><b> Lat:</b> {x} TPS<br/><b> Lng:</b></span> {y} ms",
             dataPoints: data2
         },
         {
             type: "scatter",
             name: "Fix",
-            showInLegend: true,
+            showInLegend: false,
             toolTipContent: "<span style=\"color:greenyellow \"><b>{name}</b></span><br/><b> Load:</b> {x} TPS<br/><b> Response Time:</b></span> {y} ms",
             //dataPoints: [{x: /*48.6608893*, y: /*6.1603700*/}, {x: 48.738554, y: 6.1997602}],
             dataPoints: [{x: data2[0].x - (0.0219579), y: data2[0].y - (0.0219579) / 1.6}, {x: data2[0].x + (0.0219579), y: data2[0].y + (0.0219579) / 1.6}],
