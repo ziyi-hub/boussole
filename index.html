@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="radar.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="radar.js"></script>-->
+
+    <script type="module" src="radar2.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <title>Document</title>
     <style>
         * {
@@ -275,9 +278,10 @@
                     <div class=" direction east"><span>Est</span></div>
                     <div class=" direction south"><span>Sud</span></div>
                     <div class=" direction western"><span>Ouest</span></div>-->
-                    <div class="radar" style="width: 215px; height: 115px; top: 30px;left: 60px; background-color: transparent;">
+                    <!--<div class="radar" style="width: 215px; height: 115px; top: 30px;left: 60px; background-color: transparent;">
                         <canvas id="myChart2" style="background-color: transparent;"></canvas>
-                    </div>
+                    </div>-->
+                    <div id="chartContainer" class="radar" style="height: 300px; width: 500px; position: absolute; top: 30px;left: 60px; background-color: transparent;"></div>
                 </div>
             </div>
         </div>
