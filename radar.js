@@ -1,7 +1,7 @@
-let rayon = 2;
+let rayon = 2.77;
 let data2 = [];
 let data = [
-    {x: 48.6828523, y: 6.1613907}, //myCurrent position
+    /*{x: 48.6828523, y: 6.1613907},*/ //myCurrent position
     {x: 48.6971757, y: 6.172229},
     {x: 49.1211936, y: 6.1625817},
     {x: 48.6953523, y: 6.1656114},
@@ -42,10 +42,10 @@ let data = [
     {x: 49.114248,  y: 7.0715045},
     {x: 48.2899606,  y: 6.9422293},
     {x: 49.3501138,  y: 6.1738387},
-    {x: 49.5272481,  y: 49.5272481},
+    {x: 49.5272481,  y: 5.7518725},
     {x: 48.1681596,  y: 6.4528284},
     {x: 48.6588883,  y: 6.1513846},
-    /*{x: 48.6835098,   y: 6.1616104}*/,
+    {x: 48.6835098,   y: 6.1616104},
 ];
 
 
@@ -58,7 +58,7 @@ window.onload = () => {
         data.forEach(place => {
             let distance = clacDistance(curLatitude, curLongitude, place.x, place.y);
             if (distance > rayon){
-                console.log(distance);
+                console.log(distance + place.x);
                 console.log(place.x);
                 console.log(place.y);
                 let cercleLat = curLatitude + (place.x - curLatitude) * rayon / distance;
@@ -76,11 +76,12 @@ window.onload = () => {
 
 
 function pointStyle(){
-    let pointStyle = ['rect'];
-    for(let i = 0; i < data.length-2; i++){
+    //let pointStyle = ['rect'];
+    let pointStyle = [];
+    for(let i = 0; i < data.length; i++){
         pointStyle.push("circle");
     }
-    pointStyle.push("rect");
+    //pointStyle.push("rect");
     return pointStyle;
 }
 
