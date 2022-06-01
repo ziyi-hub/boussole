@@ -53,7 +53,7 @@ window.onload = () => {
     return navigator.geolocation.getCurrentPosition(function (position) {
         let curLatitude = position.coords.latitude;
         let curLongitude = position.coords.longitude;
-        generateChart("myChart", data, '#2196f3');
+        //generateChart("myChart", data, '#2196f3');
         console.log("current position" + curLatitude, curLongitude);
         data.forEach(place => {
             let distance = clacDistance(curLatitude, curLongitude, place.x, place.y);
