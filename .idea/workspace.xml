@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50533356-ae51-4774-9722-e083c85f0e1b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/crop.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -34,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -79,7 +80,9 @@
       <workItem from="1653918210464" duration="4922000" />
       <workItem from="1653924189200" duration="719000" />
       <workItem from="1653980723228" duration="1528000" />
-      <workItem from="1653985399079" duration="42789000" />
+      <workItem from="1653985399079" duration="44094000" />
+      <workItem from="1654179576562" duration="74000" />
+      <workItem from="1654179728893" duration="2713000" />
     </task>
     <servers />
   </component>
@@ -113,12 +116,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.html</url>
-          <line>312</line>
+          <line>319</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.html</url>
-          <line>319</line>
+          <line>326</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
