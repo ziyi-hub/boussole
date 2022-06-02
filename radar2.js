@@ -107,6 +107,7 @@ function clacDistance(lat1, lng1, lat2, lng2){
 
 function generateChart(data1, data2) {
     let chart = new CanvasJS.Chart("chartContainer", {
+        backgroundColor: "transparent",
         animationEnabled: true,
         axisX: {
             gridThickness: 0,
