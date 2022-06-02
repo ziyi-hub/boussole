@@ -22,6 +22,7 @@
     <list default="true" id="50533356-ae51-4774-9722-e083c85f0e1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/radar2.js" beforeDir="false" afterPath="$PROJECT_DIR$/radar2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +80,7 @@
       <workItem from="1653918210464" duration="4922000" />
       <workItem from="1653924189200" duration="719000" />
       <workItem from="1653980723228" duration="1528000" />
-      <workItem from="1653985399079" duration="41572000" />
+      <workItem from="1653985399079" duration="42187000" />
     </task>
     <servers />
   </component>

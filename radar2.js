@@ -49,8 +49,8 @@ let data = [
 
 window.onload = () => {
     return navigator.geolocation.getCurrentPosition(function (position) {
-        //let curLatitude = position.coords.latitude;
-        //let curLongitude = position.coords.longitude;
+        let curLatitude = position.coords.latitude;
+        let curLongitude = position.coords.longitude;
 
         //let curLatitude = 48.6971757;
         //let curLongitude = 6.172229;
@@ -58,8 +58,8 @@ window.onload = () => {
         //let curLatitude = 48.6997235;
         //let curLongitude = 6.1800651;
 
-        let curLatitude = 48.694259;
-        let curLongitude = 6.166724;
+        //let curLatitude = 48.694259;
+        //let curLongitude = 6.166724;
 
         console.log("current position" + curLatitude, curLongitude);
         //transformPosition(aleatoire(), curLatitude, curLongitude);
