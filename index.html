@@ -15,7 +15,7 @@
             padding: 0;
             margin: 0;
             list-style: none;
-            background-color: white;
+            /*background-color: white;*/
         }
 
         :root,
@@ -281,7 +281,7 @@
                     <!--<div class="radar" style="width: 215px; height: 115px; top: 30px;left: 60px; background-color: transparent;">
                         <canvas id="myChart2" style="background-color: transparent;"></canvas>
                     </div>-->
-                    <div id="chartContainer" style="height: 300px; width: 500px; position: absolute;background-color: transparent;"></div>
+                    <div id="chartContainer" style="height: 300px; width: 500px; position: absolute; z-index: 999; background-color: transparent;"></div>
                 </div>
             </div>
         </div>
@@ -298,6 +298,7 @@
     //let oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
     //let oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
     let oDirecrionAngle = document.getElementsByClassName('direction-angle')[0];
+    let points = document.getElementById("chartContainer");
 
 
     // 让元素围成一圈
@@ -368,10 +369,11 @@
 
 
             // 第一页的水平仪和方位文字归正
-            oNorthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha) + 'deg)';
-            oEastSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 90) + 'deg)';
-            oSouthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 180) + 'deg)';
-            oWesternSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha - 90) + 'deg)';
+            //oNorthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha) + 'deg)';
+            //oEastSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 90) + 'deg)';
+            //oSouthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 180) + 'deg)';
+            //oWesternSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha - 90) + 'deg)';
+            //points.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha - 90) + 'deg)';
 
             // 指针指到正北时,指针变红；
             if ((e.alpha) % 360 < 1 || (e.alpha) % 360 > 359) {
