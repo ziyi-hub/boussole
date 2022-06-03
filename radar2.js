@@ -202,7 +202,8 @@ function createChart(data1, data2) {
 
         init
             .then(position => {
-                console.log(position.coords.latitude);
+                //console.log(position.coords.latitude);
+                alert(position.coords.latitude);
                 //transformPosition2(aleatoire(), position.coords.latitude, position.coords.longitude);
                 transformPosition2(data1, position.coords.latitude, position.coords.longitude);
                 chart.options.data[0].dataPoints = data3;
