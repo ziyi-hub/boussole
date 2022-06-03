@@ -83,7 +83,7 @@
       <workItem from="1654179576562" duration="74000" />
       <workItem from="1654179728893" duration="6728000" />
       <workItem from="1654201374431" duration="1992000" />
-      <workItem from="1654239835768" duration="2343000" />
+      <workItem from="1654239835768" duration="2781000" />
     </task>
     <servers />
   </component>
@@ -127,7 +127,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/radar2.js</url>
-          <line>173</line>
+          <line>171</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

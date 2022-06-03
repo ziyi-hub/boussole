@@ -53,10 +53,8 @@ window.onload = () => {
 */
 
 
-window.setInterval(showalert, 3000);
-function showalert(){
-    alert("ok");
-}
+window.setInterval(init, 10000);
+
 
 
 function init(){
