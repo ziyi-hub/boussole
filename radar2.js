@@ -53,7 +53,7 @@ window.onload = () => {
 */
 
 
-window.setInterval(init, 10000);
+window.setInterval(init, 5000);
 
 
 
