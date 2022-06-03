@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50533356-ae51-4774-9722-e083c85f0e1b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -83,7 +84,7 @@
       <workItem from="1654179576562" duration="74000" />
       <workItem from="1654179728893" duration="6728000" />
       <workItem from="1654201374431" duration="1992000" />
-      <workItem from="1654239835768" duration="24143000" />
+      <workItem from="1654239835768" duration="24442000" />
     </task>
     <servers />
   </component>
@@ -121,12 +122,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.html</url>
-          <line>313</line>
+          <line>88</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.html</url>
-          <line>320</line>
+          <line>95</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
