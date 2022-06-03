@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="radar.js"></script>-->
-
     <script type="module" src="radar2.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <title>Document</title>
@@ -305,7 +301,6 @@
     //let oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
     //let oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
     let oDirecrionAngle = document.getElementsByClassName('direction-angle')[0];
-    //let points = document.getElementById("chartContainer");
 
 
     // 让元素围成一圈
@@ -372,7 +367,7 @@
 
 
             // 方向角度
-            oDirecrionAngle.innerHTML = str + Math.abs(Math.round(360 - e.alpha)) + '°';
+            //oDirecrionAngle.innerHTML = str + Math.abs(Math.round(360 - e.alpha)) + '°';
 
 
             // 第一页的水平仪和方位文字归正
