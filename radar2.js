@@ -58,6 +58,11 @@ window.setInterval(init, 5000);
 
 
 function init(){
+    //reinitiialise array data2
+    while(data2.length !== 0){
+        data2.pop();
+    }
+
     return navigator.geolocation.getCurrentPosition(function (position) {
         let curLatitude = position.coords.latitude;
         let curLongitude = position.coords.longitude;
@@ -78,7 +83,8 @@ function init(){
         //transformPosition(aleatoire(), curLatitude, curLongitude);
         transformPosition(data, curLatitude, curLongitude);
         generateChart(data2, [{x: curLatitude, y: curLongitude}]);
-    })
+        console.log("Length: " + data2.length);
+    });
 }
 
 function aleatoire(){
