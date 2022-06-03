@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function (){
         .then(position => {
             let curLatitude, curLongitude;
 
-            //window.setInterval(()=>{
+            window.setInterval(()=>{
 
                 //vider data2
                 while (data2.length !== 0) {
@@ -64,11 +64,12 @@ document.addEventListener("DOMContentLoaded", function (){
                 curLatitude = position.coords.latitude;
                 curLongitude = position.coords.longitude;
 
+                alert(position.coords.latitude);
                 transformPosition(data, curLatitude, curLongitude);
                 createChart(data2, [{x: curLatitude, y: curLongitude}]);
 
                 console.log("Length: " + data2.length);
-            //}, 5000);
+            }, 5000);
         });
 })
 
@@ -194,7 +195,7 @@ function createChart(data1, data2) {
         ]
     });
     chart.render();
-    window.setInterval(()=>{
+    /*window.setInterval(()=>{
         //vider data3
         while (data3.length !== 0) {
             data3.pop();
@@ -211,7 +212,7 @@ function createChart(data1, data2) {
                 chart.render();
             })
 
-    }, 5000);
+    }, 5000);*/
 
 }
 
