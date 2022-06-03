@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function (){
         .then(position => {
             let curLatitude, curLongitude;
 
-            window.setInterval(()=>{
+            //window.setInterval(()=>{
 
                 //vider data2
                 while (data2.length !== 0) {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function (){
                 createChart(data2, [{x: curLatitude, y: curLongitude}]);
 
                 console.log("Length: " + data2.length);
-            }, 5000);
+            //}, 5000);
         });
 })
 
@@ -195,7 +195,7 @@ function createChart(data1, data2) {
         ]
     });
     chart.render();
-    /*window.setInterval(()=>{
+    window.setInterval(()=>{
         //vider data3
         while (data3.length !== 0) {
             data3.pop();
@@ -203,16 +203,16 @@ function createChart(data1, data2) {
 
         init
             .then(position => {
-                //console.log(position.coords.latitude);
-                alert(position.coords.latitude);
-                //transformPosition2(aleatoire(), position.coords.latitude, position.coords.longitude);
-                transformPosition2(data1, position.coords.latitude, position.coords.longitude);
+                console.log(position.coords.latitude);
+                //alert(position.coords.latitude);
+                transformPosition2(aleatoire(), position.coords.latitude, position.coords.longitude);
+                //transformPosition2(data1, position.coords.latitude, position.coords.longitude);
                 chart.options.data[0].dataPoints = data3;
                 console.log(data3.length);
                 chart.render();
             })
 
-    }, 5000);*/
+    }, 5000);
 
 }
 
