@@ -46,8 +46,20 @@ let data = [
     {x: 48.6588883,  y: 6.1513846, nom: "IUT NANCY-BRABOIS"},
     {x: 48.6835098,   y: 6.1616104, nom: "IUT NANCY-CHARLEMAGNE"},
 ];
-
+/*
 window.onload = () => {
+    init();
+}
+*/
+
+
+window.setInterval(showalert, 3000);
+function showalert(){
+    alert("ok");
+}
+
+
+function init(){
     return navigator.geolocation.getCurrentPosition(function (position) {
         let curLatitude = position.coords.latitude;
         let curLongitude = position.coords.longitude;
