@@ -48,47 +48,28 @@ let data = [
     {x: 48.6835098,   y: 6.1616104, nom: "IUT NANCY-CHARLEMAGNE"},
 ];
 
-
-document.addEventListener("DOMContentLoaded", function (){
-    window.setInterval(()=>{
-    init
-        .then(position => {
-            let curLatitude, curLongitude;
-                //vider data2
-                while (data2.length !== 0) {
-                    data2.pop();
-                }
-
-                curLatitude = position.coords.latitude;
-                curLongitude = position.coords.longitude;
-
-                //alert(position.coords.latitude);
-                transformPosition(data, curLatitude, curLongitude);
-                createChart(data2, [{x: curLatitude, y: curLongitude}]);
-
-                //console.log("Length: " + data2.length);
-        });
-    }, 5000);
-   })
-
-
-let init = new Promise((resolve, reject) => {
-    window.setInterval(()=>{
+window.setInterval(()=>{
     navigator.geolocation.getCurrentPosition(
         position => {
             console.log("Load success");
             console.log(position);
-            resolve(position);
+            while (data2.length !== 0) {
+                data2.pop();
+            }
+
+            let curLatitude = position.coords.latitude;
+            let curLongitude = position.coords.longitude;
+
+            transformPosition(data, curLatitude, curLongitude);
+            createChart(data2, [{x: curLatitude, y: curLongitude}]);
         },
         error => {
             console.log("Load reject");
-            reject(error);
         }, {
             enableHighAccuracy: true,
         }
     );
-    }, 5000);
-})
+}, 5000);
 
 function aleatoire(){
     let dataAle = [];
@@ -191,7 +172,6 @@ function createChart(data1, data2) {
             name: "Fix",
             showInLegend: false,
             toolTipContent: "<span style=\"color:transparent \"><b>{name}</b></span><br/><b> Load:</b> {x} TPS<br/><b> Response Time:</b></span> {y} ms",
-            //dataPoints: [{x: data2[0].x - (0.0219579), y: data2[0].y - (0.0219579) / 1.6}, {x: data2[0].x + (0.0219579), y: data2[0].y + (0.0219579) / 1.6}],
             dataPoints: [{x: data2[0].x - (0.0219579), y: data2[0].y - (0.0219579) / 1.2}, {x: data2[0].x + (0.0219579), y: data2[0].y + (0.0219579) / 1.2}],
         },
         ]
@@ -205,8 +185,6 @@ function createChart(data1, data2) {
     }
 
     console.log(data2[0].x);
-    //alert(position.coords.latitude);
-    //transformPosition2(aleatoire(), position.coords.latitude, position.coords.longitude);
     transformPosition2(data1, data2[0].x, data2[0].y);
     chart.options.data[0].dataPoints = data3;
     chart.render();
