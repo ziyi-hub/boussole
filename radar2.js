@@ -1,5 +1,6 @@
 let rayon = 0.8;
 let data2 = [];
+let data3 = [];
 let data = [
     {x: 48.6971757, y: 6.172229, nom: "IECA"},
     {x: 49.1211936, y: 6.1625817, nom: "UFR ALL-METZ"},
@@ -53,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function (){
         .then(position => {
             let curLatitude, curLongitude;
 
-            window.setInterval(()=>{
+            //window.setInterval(()=>{
 
                 //vider data2
                 while (data2.length !== 0) {
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function (){
                 createChart(data2, [{x: curLatitude, y: curLongitude}]);
 
                 console.log("Length: " + data2.length);
-            }, 5000);
+            //}, 5000);
         });
 })
 
@@ -88,7 +89,7 @@ let init = new Promise((resolve, reject) => {
 
 function aleatoire(){
     let dataAle = [];
-    for (let i = 0; i < 2000; i++){
+    for (let i = 0; i < 40; i++){
         dataAle.push({x: Math.random() + 48, y: Math.random() + 6})
     }
     return dataAle;
@@ -108,6 +109,19 @@ function transformPosition(data, curLatitude, curLongitude){
             data2.push({x: cercleLat, y: cercleLng});
         }else{
             data2.push({x: place.x, y: place.y});
+        }
+    })
+}
+
+function transformPosition2(data, curLatitude, curLongitude){
+    data.forEach(place => {
+        let distance = clacDistance(curLatitude, curLongitude, place.x, place.y);
+        if (distance > rayon){
+            let cercleLat = curLatitude + (place.x - curLatitude) * rayon / distance;
+            let cercleLng = curLongitude + (place.y - curLongitude) * rayon / distance;
+            data3.push({x: cercleLat, y: cercleLng});
+        }else{
+            data3.push({x: place.x, y: place.y});
         }
     })
 }
@@ -180,6 +194,24 @@ function createChart(data1, data2) {
         ]
     });
     chart.render();
+    window.setInterval(()=>{
+        //vider data3
+        while (data3.length !== 0) {
+            data3.pop();
+        }
+
+        init
+            .then(position => {
+                console.log(position.coords.latitude);
+                //transformPosition2(aleatoire(), position.coords.latitude, position.coords.longitude);
+                transformPosition2(data1, position.coords.latitude, position.coords.longitude);
+                chart.options.data[0].dataPoints = data3;
+                console.log(data3.length);
+                chart.render();
+            })
+
+    }, 5000);
+
 }
 
 
