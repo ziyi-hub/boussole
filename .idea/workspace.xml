@@ -83,7 +83,7 @@
       <workItem from="1654179576562" duration="74000" />
       <workItem from="1654179728893" duration="6728000" />
       <workItem from="1654201374431" duration="1992000" />
-      <workItem from="1654239835768" duration="4092000" />
+      <workItem from="1654239835768" duration="15445000" />
     </task>
     <servers />
   </component>
@@ -107,6 +107,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="137" y="200" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1654004624574" />
+    <state x="698" y="246" key="RollbackChangesDialog" timestamp="1654252318814">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="698" y="246" key="RollbackChangesDialog/265.1105.1440.875/0.0.1920.1080@0.0.1920.1080" timestamp="1654252318814" />
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1654112096029">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -127,7 +131,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/radar2.js</url>
-          <line>177</line>
+          <line>176</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

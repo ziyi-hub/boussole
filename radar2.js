@@ -46,46 +46,45 @@ let data = [
     {x: 48.6588883,  y: 6.1513846, nom: "IUT NANCY-BRABOIS"},
     {x: 48.6835098,   y: 6.1616104, nom: "IUT NANCY-CHARLEMAGNE"},
 ];
-/*
-window.onload = () => {
-    init();
-}
-*/
 
+document.addEventListener("DOMContentLoaded", function (){
 
-window.setInterval(init, 5000);
+    init
+        .then(position => {
+            let curLatitude, curLongitude;
 
+            window.setInterval(()=>{
 
+                //vider data2
+                while (data2.length !== 0) {
+                    data2.pop();
+                }
 
-function init(){
-    //reinitiialise array data2
-    while(data2.length !== 0){
-        data2.pop();
-    }
+                curLatitude = position.coords.latitude;
+                curLongitude = position.coords.longitude;
 
-    return navigator.geolocation.getCurrentPosition(function (position) {
-        let curLatitude = position.coords.latitude;
-        let curLongitude = position.coords.longitude;
+                transformPosition(data, curLatitude, curLongitude);
+                createChart(data2, [{x: curLatitude, y: curLongitude}]);
 
-        //let curLatitude = 48.6971757;
-        //let curLongitude = 6.172229;
+                console.log("Length: " + data2.length);
+            }, 5000);
+        });
+})
 
-        //let curLatitude = 48.6997235;
-        //let curLongitude = 6.1800651;
-
-        //let curLatitude = 48.694259;
-        //let curLongitude = 6.166724;
-
-        //let curLatitude = 0;
-        //let curLongitude = 0;
-
-        console.log("current position" + curLatitude, curLongitude);
-        //transformPosition(aleatoire(), curLatitude, curLongitude);
-        transformPosition(data, curLatitude, curLongitude);
-        generateChart(data2, [{x: curLatitude, y: curLongitude}]);
-        console.log("Length: " + data2.length);
-    });
-}
+let init = new Promise((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(
+        position => {
+            console.log("Load success");
+            resolve(position);
+        },
+        error => {
+            console.log("Load reject");
+            reject(error);
+        }, {
+            enableHighAccuracy: true,
+        }
+    );
+})
 
 function aleatoire(){
     let dataAle = [];
@@ -99,13 +98,13 @@ function transformPosition(data, curLatitude, curLongitude){
     data.forEach(place => {
         let distance = clacDistance(curLatitude, curLongitude, place.x, place.y);
         if (distance > rayon){
-            console.log(distance);
-            console.log(place.x);
-            console.log(place.y);
+            //console.log(distance);
+            //console.log(place.x);
+            //console.log(place.y);
             let cercleLat = curLatitude + (place.x - curLatitude) * rayon / distance;
             let cercleLng = curLongitude + (place.y - curLongitude) * rayon / distance;
-            console.log("Lat tranform: " + cercleLat);
-            console.log("Lng transform: " + cercleLng);
+            //console.log("Lat tranform: " + cercleLat);
+            //console.log("Lng transform: " + cercleLng);
             data2.push({x: cercleLat, y: cercleLng});
         }else{
             data2.push({x: place.x, y: place.y});
@@ -124,7 +123,7 @@ function clacDistance(lat1, lng1, lat2, lng2){
     return s.toFixed(2);
 }
 
-function generateChart(data1, data2) {
+function createChart(data1, data2) {
     let chart = new CanvasJS.Chart("chartContainer", {
         backgroundColor: "transparent",
         animationEnabled: true,
