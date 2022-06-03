@@ -61,6 +61,9 @@ window.onload = () => {
         //let curLatitude = 48.694259;
         //let curLongitude = 6.166724;
 
+        //let curLatitude = 0;
+        //let curLongitude = 0;
+
         console.log("current position" + curLatitude, curLongitude);
         //transformPosition(aleatoire(), curLatitude, curLongitude);
         transformPosition(data, curLatitude, curLongitude);
@@ -110,6 +113,7 @@ function generateChart(data1, data2) {
         backgroundColor: "transparent",
         animationEnabled: true,
         axisX: {
+            interval: 30,
             gridThickness: 0,
             tickLength: 0,
             lineThickness: 0,
@@ -118,6 +122,7 @@ function generateChart(data1, data2) {
             }
         },
         axisY:{
+            interval: 0.0001,
             gridThickness: 0,
             tickLength: 0,
             lineThickness: 0,
@@ -125,11 +130,14 @@ function generateChart(data1, data2) {
                 return " ";
             }
         },
+
         /*axisX: {
-            title: "Lat"
+            title: "Lat",
+            interval: 30,
         },
         axisY:{
             title: "Lng",
+            interval: 0.0001,
         },*/
         data: [
         {
@@ -151,7 +159,8 @@ function generateChart(data1, data2) {
             name: "Fix",
             showInLegend: false,
             toolTipContent: "<span style=\"color:transparent \"><b>{name}</b></span><br/><b> Load:</b> {x} TPS<br/><b> Response Time:</b></span> {y} ms",
-            dataPoints: [{x: data2[0].x - (0.0219579), y: data2[0].y - (0.0219579) / 1.6}, {x: data2[0].x + (0.0219579), y: data2[0].y + (0.0219579) / 1.6}],
+            //dataPoints: [{x: data2[0].x - (0.0219579), y: data2[0].y - (0.0219579) / 1.6}, {x: data2[0].x + (0.0219579), y: data2[0].y + (0.0219579) / 1.6}],
+            dataPoints: [{x: data2[0].x - (0.0219579), y: data2[0].y - (0.0219579) / 1.2}, {x: data2[0].x + (0.0219579), y: data2[0].y + (0.0219579) / 1.2}],
         },
         ]
     });
