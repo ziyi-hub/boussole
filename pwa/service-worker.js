@@ -1,5 +1,5 @@
 const CACHE_NAME = 'offline';
-const OFFLINE_URL = 'offline.html';
+const OFFLINE_URL = ['index.html'];
 /*
 self.addEventListener('install', function(event) {
     console.log('[ServiceWorker] Install');
@@ -17,13 +17,15 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener("install", (event) => {
     console.log("Service Worker : Installed!")
-    event.waitUntil(
-        caches.open(CACHE_NAME).then(function(cache) {
-            return cache.addAll([
-                'icon.png',
-                'index.js',
-            ]);
-        })
+    event.waitUntil((async() => {
+            try {
+                let cache_obj = await caches.open(CACHE_NAME)
+                await cache_obj.addAll(OFFLINE_URL)
+            }
+            catch{
+                console.log("error occured while caching...")
+            }
+        })()
     )
 })
 

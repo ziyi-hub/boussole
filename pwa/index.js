@@ -1,15 +1,32 @@
-/* Only register a service worker if it's supported */
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js');
 }
 
 window.addEventListener('beforeinstallprompt', (event) => {
+    const addBtn = document.querySelector('.add-button');
+    addBtn.style.display = 'none';
+
     event.preventDefault();
     console.log('ok', 'beforeinstallprompt', event);
-    // 这个变量后面要用
     window.deferredPrompt = event;
-    // 你用来显示 添加到PWA 的 按钮可以显示出来了
+    addBtn.style.display = 'block';
 
+    addBtn.addEventListener('click', (e) => {
+        // 隐藏显示 A2HS 按钮的界面
+        addBtn.style.display = 'none';
+
+        deferredPrompt.prompt();
+
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            } else {
+                console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+        });
+    });
 });
 
 const butInstall = document.querySelector('.add-button');
@@ -18,21 +35,18 @@ butInstall.addEventListener('click', () => {
     console.log('ok', 'butInstall-clicked');
     const promptEvent = window.deferredPrompt;
     if (!promptEvent) {
-        // deferred prompt 不可用
-        alert('deferred prompt 不可用')
+        alert('deferred prompt ne support pas')
         return;
     }
     promptEvent.prompt();
     promptEvent.userChoice.then((choiceResult) => {
         console.log('ok', 'userChoice', choiceResult);
         if (choiceResult.outcome === 'accepted') {
-            console.log('用户 同意了');
-            // 成功之后的业务回掉操作
+            console.log('installer');
             // your code here
         } else {
-            console.log('用户 没同意');
+            console.log('annuler');
         }
-        // 回收 deferredPrompt 变量, prompt() 只能被调用一次
         window.deferredPrompt = null;
     });
 });
@@ -40,6 +54,5 @@ butInstall.addEventListener('click', () => {
 
 window.addEventListener('appinstalled', (event) => {
     console.log('👍', 'appinstalled', event);
-    // 回收 deferredPrompt 变量
     window.deferredPrompt = null;
 });
