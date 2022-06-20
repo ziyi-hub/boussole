@@ -1,0 +1,70 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jarallax | JavaScript parallax scrolling with NO dependencies</title>
+    <meta
+      name="description"
+      content="Pure JavaScript parallax scrolling effect. jQuery supported. Youtube and Vimeo parallax supported."
+    />
+    <link href="./css/demo.css" rel="stylesheet" />
+
+    <link href="../dist/jarallax.css" rel="stylesheet" />
+    <script src="../dist/jarallax.js"></script>
+
+  </head>
+  <body>
+    <div class="jarallax" data-speed="1.4">
+      <img class="jarallax-img" src="images/image4.jpg" alt="" loading="lazy" />
+    </div>
+
+    <div class="jarallax" data-speed="1.4">
+      <img class="jarallax-img" src="images/image1.jpg" alt="" loading="lazy" />
+    </div>
+
+    <script type="text/javascript">
+      /* init Jarallax */
+      jarallax(document.querySelectorAll(".jarallax"));
+    </script>
+  </body>
+</html>-->
+
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <!-- aframe -->
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<body>
+  <!-- GeoAR -->
+
+  <a-scene
+          vr-mode-ui="enabled: false"
+          isMobile="true"
+          arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+          class="scene"
+  >
+      <a-image
+              gps-entity-place="latitude: 48.6835098; longitude: 6.1616104"
+              name="L'Institut Universitaire de Technologie Nancy-Charlemagne"
+              src="https://i.ytimg.com/vi/1OaBoi9kRzw/maxresdefault.jpg" alt=""
+              scale="120 120 120"
+      ></a-image>
+      <a-image
+              gps-entity-place="latitude: 48.6729956; longitude: 6.1702775"
+              name="MINES NANCY"
+              src="https://i.ytimg.com/vi/1OaBoi9kRzw/maxresdefault.jpg" alt=""
+              scale="120 120 120"
+      ></a-image>
+
+      <a-camera gps-camera rotation-reader minDistance="200" simulateLatitude="48.67299500" simulateLongitude="6.170260"> <!--simulateLatitude="48.67299566" simulateLongitude="6.1702775"-->
+        <a-cursor geometry="primitive: ring" material="color: #FFC0CB; shader: flat"></a-cursor>
+      </a-camera>
+  </a-scene>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="module" src="radar2.js"></script>
+    <title>Title</title>
+    <style>
+
+        .middle{
+            position: absolute;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            clip: rect(65px, 335px, 365px, 165px);
+            border-radius: 50%;
+        }
+
+        #chartContainer{
+            height: 300px;
+            width: 500px;
+            position: absolute;
+            float: left;
+            background-size: cover;
+            background-position: center center;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="chartContainer" class="middle"></div>
+    <!--<img class="middle" src="https://developer.mozilla.org/@api/deki/files/3613/=hut.jpg" title="Graphic clipped towards middle">-->
+</body>
+</html>

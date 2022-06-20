@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="module" src="radar2.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+<div class="show">
+    <div class="wrapper">
+        <div class="box">
+
+            <div class="text">
+                <div class="direction-angle"></div>
+            </div>
+            <div class="point"></div>
+
+            <!-- 表盘 -->
+            <div class="dial"><!-- style="background-color: transparent;" -->
+
+                <!-- 刻度 -->
+                <div class="scale"><!-- style="background-color: transparent;" -->
+                    <ul id="ul"></ul>
+                </div>
+
+                <!-- 数字 -->
+                <div class="num">
+                    <!--<ul>
+                        <li>0</li>
+                        <li>20</li>
+                        <li>40</li>
+                        <li>60</li>
+                        <li>80</li>
+                        <li>100</li>
+                        <li>120</li>
+                        <li>140</li>
+                        <li>160</li>
+                        <li>180</li>
+                        <li>200</li>
+                        <li>220</li>
+                        <li>240</li>
+                        <li>260</li>
+                        <li>280</li>
+                        <li>300</li>
+                        <li>320</li>
+                        <li>340</li>
+
+                    </ul>-->
+                    <!--<div class="sign" style="z-index: 999; background-color: transparent"></div>
+                    <div class=" direction north"><span>Nord</span></div>
+                    <div class=" direction east"><span>Est</span></div>
+                    <div class=" direction south"><span>Sud</span></div>
+                    <div class=" direction western"><span>Ouest</span></div>-->
+                    <!--<div class="radar" style="width: 215px; height: 115px; top: 30px;left: 60px; background-color: transparent;">
+                        <canvas id="myChart2" style="background-color: transparent;"></canvas>
+                    </div>-->
+                    <div id="chartContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let oScaleLiArr = document.getElementsByClassName('scale')[0].getElementsByTagName('li');
+    //let oNumLiArr = document.getElementsByClassName('num')[0].getElementsByTagName('li');
+    let oDirectionLiArr = document.getElementsByClassName('direction');
+    let oDial = document.getElementsByClassName('dial')[0];
+    let oPoint = document.getElementsByClassName('point')[0];
+    //let oNorthSpan = document.getElementsByClassName('north')[0].getElementsByTagName('span')[0];
+    //let oEastSpan = document.getElementsByClassName('east')[0].getElementsByTagName('span')[0];
+    //let oSouthSpan = document.getElementsByClassName('south')[0].getElementsByTagName('span')[0];
+    //let oWesternSpan = document.getElementsByClassName('western')[0].getElementsByTagName('span')[0];
+    let oDirecrionAngle = document.getElementsByClassName('direction-angle')[0];
+
+
+    // 让元素围成一圈
+    function rotateDom(domArr, deg) {
+        Array.prototype.slice.call(domArr, 0).forEach(function (ele, index) {
+            ele.style.transform = 'translatez(0px) rotate(' + deg * index + 'deg)';
+        })
+
+    }
+
+    let oUl = document.getElementById('ul');
+    /* 因为是60个刻度嘛，我们就创建60个li，并设置它们的旋转角度 */
+    for (let i=0; i<180; i++){
+        let oLi = document.createElement('li');
+        /* 因为i是从0~60，而每个刻度的旋转角度360°÷60=6°，所以每个刻度的旋转角度就是i*6°  */
+        oLi.style.webkitTransform = 'rotate('+ i*2 +'deg)';
+        oUl.appendChild(oLi);
+    }
+
+
+    // 绑定获取设备方位信息事件
+    window.addEventListener("deviceorientation", function (e) {
+        if (e.alpha) {
+
+            // 初始化表盘
+            rotateDom(oScaleLiArr, 2)
+            //rotateDom(oNumLiArr, 20)
+            rotateDom(oDirectionLiArr, 90)
+
+            // 指北针
+            oDial.style.transform = "translatez(0px) rotate(" + Math.round(e.alpha) + "deg)";
+
+            let str = '';
+
+            // 判断方位
+            let dic = (Math.round((e.alpha) / 45) + 8) % 8;
+            switch (dic) {
+                case 0:
+                    str = "Nord ";
+                    break;
+                case 1:
+                    str = "Nord-Ouest ";
+                    break;
+                case 2:
+                    str = "Ouest ";
+                    break;
+                case 3:
+                    str = "Sud-Ouest ";
+                    break;
+                case 4:
+                    str = "Sud ";
+                    break;
+                case 5:
+                    str = "Sud-Est ";
+                    break;
+                case 6:
+                    str = "Est ";
+                    break;
+                case 7:
+                    str = "Nord-Est ";
+                    break;
+
+            }
+
+
+            // 方向角度
+            //oDirecrionAngle.innerHTML = str + Math.abs(Math.round(360 - e.alpha)) + '°';
+
+
+            // 第一页的水平仪和方位文字归正
+            //oNorthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha) + 'deg)';
+            //oEastSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 90) + 'deg)';
+            //oSouthSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha + 180) + 'deg)';
+            //oWesternSpan.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha - 90) + 'deg)';
+            //points.style.transform = 'translatez(0px) rotate(' + -Math.round(e.alpha - 90) + 'deg)';
+
+            // 指针指到正北时,指针变红；
+            if ((e.alpha) % 360 < 1 || (e.alpha) % 360 > 359) {
+                oPoint.style.backgroundColor = "#f00";
+            } else {
+                oPoint.style.backgroundColor = "#000"
+            }
+
+        } /*else {
+            alert("您的设备不支持Deviceorientation功能，请用Android设备打开！")
+        }*/
+
+    }, false)
+</script>
+</body>
+</html>

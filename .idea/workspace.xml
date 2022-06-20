@@ -20,9 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50533356-ae51-4774-9722-e083c85f0e1b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pwa/image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pwa/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pwa/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pwa/manifest.webmanifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/boussole.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/boussole.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/radar2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pwa" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,6 +76,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pwa" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -84,7 +95,16 @@
       <workItem from="1654179576562" duration="74000" />
       <workItem from="1654179728893" duration="6728000" />
       <workItem from="1654201374431" duration="1992000" />
-      <workItem from="1654239835768" duration="24442000" />
+      <workItem from="1654239835768" duration="24529000" />
+      <workItem from="1654596717521" duration="3312000" />
+      <workItem from="1654600174678" duration="275000" />
+      <workItem from="1654761503607" duration="616000" />
+      <workItem from="1654762163925" duration="3898000" />
+      <workItem from="1654778794183" duration="862000" />
+      <workItem from="1655113589895" duration="189000" />
+      <workItem from="1655124401015" duration="8798000" />
+      <workItem from="1655190370487" duration="6880000" />
+      <workItem from="1655727151346" duration="525000" />
     </task>
     <servers />
   </component>
@@ -104,10 +124,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="200" width="1240" height="700" key="DiffContextDialog" timestamp="1654004624574">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="424" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1654597480978">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="424" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/265.1105.1440.875/0.0.1920.1080@0.0.1920.1080" timestamp="1654597480978" />
+    <state x="183" y="240" width="1654" height="840" key="DiffContextDialog" timestamp="1655131780761">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="137" y="200" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1654004624574" />
+    <state x="183" y="240" width="1654" height="840" key="DiffContextDialog/265.1105.1440.875/0.0.1920.1080@0.0.1920.1080" timestamp="1655131780761" />
     <state x="698" y="246" key="RollbackChangesDialog" timestamp="1654252318814">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -116,21 +141,5 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="521" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1654112096029" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/index.html</url>
-          <line>88</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/index.html</url>
-          <line>95</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
