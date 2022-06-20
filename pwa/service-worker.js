@@ -1,6 +1,6 @@
 const CACHE_NAME = 'offline';
 const OFFLINE_URL = 'offline.html';
-
+/*
 self.addEventListener('install', function(event) {
     console.log('[ServiceWorker] Install');
 
@@ -13,6 +13,19 @@ self.addEventListener('install', function(event) {
 
     self.skipWaiting();
 });
+ */
+
+self.addEventListener("install", (event) => {
+    console.log("Service Worker : Installed!")
+    event.waitUntil(
+        caches.open(CACHE_NAME).then(function(cache) {
+            return cache.addAll([
+                'icon.png',
+                'index.js',
+            ]);
+        })
+    )
+})
 
 
 self.addEventListener('activate', (event) => {
