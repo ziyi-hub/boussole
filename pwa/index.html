@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <script src="index.js" defer></script>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="PWA Workshop" />
+    <meta name="apple-mobile-web-app-title" content="PWA Workshop" />
+    <meta name="msapplication-starturl" content="/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <!-- 图标,支持尺寸匹配 -->
+    <meta name="apple-touch-icon" sizes="192x192" href="/android-chrome-maskable-192x192">
+    <meta name="apple-touch-icon" sizes="512x512" href="/android-chrome-maskable-512x512">
+    <!-- short_name一致,标题 -->
+    <meta name="apple-mobile-web-app-title" content="">
+    <!-- 显示模式,有且仅支持yes,代表Standalone -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+
     <title>Title</title>
     <style>
         body{
             height:200px;
         }
 
-        #install_button{
+        .add-button{
             background-color: orange;
             width: 100%;
             height: 50px;
@@ -18,6 +33,6 @@
     </style>
 </head>
 <body>
-    <button id="install_button">Add to screen home</button>
+    <button class="add-button">Add to home screen</button>
 </body>
 </html>
