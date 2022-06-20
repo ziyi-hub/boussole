@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50533356-ae51-4774-9722-e083c85f0e1b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pwa/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pwa/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pwa/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pwa/manifest.webmanifest" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +68,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pwa" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/pwa" />
       <recent name="$PROJECT_DIR$" />
@@ -93,7 +100,7 @@
       <workItem from="1655113589895" duration="189000" />
       <workItem from="1655124401015" duration="8798000" />
       <workItem from="1655190370487" duration="6880000" />
-      <workItem from="1655727151346" duration="671000" />
+      <workItem from="1655727151346" duration="2093000" />
     </task>
     <servers />
   </component>
